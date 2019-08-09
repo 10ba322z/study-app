@@ -1,0 +1,13 @@
+<header>
+  <nav class="navbar navbar-dark bg-dark .fixed-top">
+    <% if user_signed_in? %>
+      <a  class="navbar-brand" href="#">Study App</a>
+      <strong><%= link_to current_user.email, pages_show_path %></strong>
+      <%= link_to 'プロフィール変更', edit_user_registration_path %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'サインアップ', new_user_registration_path %>
+      <%= link_to 'ログイン', new_user_session_path %>
+    <% end %>
+  </nav>
+</header>
