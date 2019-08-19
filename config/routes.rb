@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
     authenticated :user do
-      root :to => 'pages#index'
+      root :to => 'users#index'
     end
     unauthenticated :user do
       root :to => 'devise/sessions#new'
     end
   end
-  get  'pages/show'
+  resources :users,         only: [:index, :show]
 end

@@ -1,0 +1,12 @@
+<h1>こんにちは、<%= current_user.email %>さん</h1>
+<p>ユーザー用ページです。</p>
+<strong><%= link_to current_user.email, user_path %></strong>
+<div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= paginate @microposts %>
+    <% end %>
+  </div>
