@@ -1,7 +1,16 @@
-<h1>こんにちは、<%= current_user.email %>さん</h1>
-<p>ユーザー用ページです。</p>
-<strong><%= link_to current_user.email, user_path %></strong>
-<div class="col-md-8">
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @user.email %>
+      </h1>
+    </section>
+    <section class="stats">
+      <%= render 'stats' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <%= render 'follow_form' if user_signed_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
@@ -10,3 +19,4 @@
       <%= paginate @microposts %>
     <% end %>
   </div>
+</div>

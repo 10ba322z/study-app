@@ -8,6 +8,13 @@ Rails.application.routes.draw do
       root :to => 'devise/sessions#new'
     end
   end
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :users,         only: [:index, :show]
   resources :microposts,    only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
+
 end
