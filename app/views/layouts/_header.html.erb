@@ -1,9 +1,11 @@
-<header>
-  <nav class="navbar navbar-dark bg-dark .fixed-top">
-    <% if user_signed_in? %>
-      <%= link_to "Study App", '/', id: "logo" %>
-      <%= link_to 'プロフィール変更', edit_user_registration_path %>
-      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <% end %>
-  </nav>
+<header class="navbar navbar-fixed-top navbar-dark navbar-inverse">
+  <%= link_to "Study App", '/', id: "logo" %>
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+  </div>
 </header>
