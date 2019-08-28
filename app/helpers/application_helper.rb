@@ -11,4 +11,9 @@ module ApplicationHelper
   def current_user?(user)
     user == current_user
   end
+
+  def time_diff
+    #ここに計算式を書く
+    :start_at
+  end
 end

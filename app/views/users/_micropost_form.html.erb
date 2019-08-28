@@ -6,6 +6,14 @@
   <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
+  <span class="controls">
+    <%= f.text_field :start_at, data: { :date_format => 'YYYY/MM/DD hh:mm' },
+        :class => 'form-control datetimepicker', placeholder: '開始時刻' %>
+  </span>
+  <span class="controls">
+    <%= f.text_field :end_at, data: { :date_format => 'YYYY/MM/DD hh:mm' },
+        :class => 'form-control datetimepicker', placeholder: '終了時刻' %>
+  </span>
 <% end %>
 
 <script type="text/javascript">
