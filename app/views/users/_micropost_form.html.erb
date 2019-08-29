@@ -1,19 +1,17 @@
 <%= form_for(@micropost) do |f| %>
+<span class="controls">
+  <%= f.text_field :start_at, data: { :date_format => 'YYYY/MM/DD hh:mm' },
+      :class => 'form-control datetimepicker', placeholder: '開始時刻' %>
+  <%= f.text_field :end_at, data: { :date_format => 'YYYY/MM/DD hh:mm' },
+      :class => 'form-control datetimepicker', placeholder: '終了時刻' %>
+</span>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <%= f.text_area :content, placeholder: "一言メモ" %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
   <span class="picture">
     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
-  <span class="controls">
-    <%= f.text_field :start_at, data: { :date_format => 'YYYY/MM/DD hh:mm' },
-        :class => 'form-control datetimepicker', placeholder: '開始時刻' %>
-  </span>
-  <span class="controls">
-    <%= f.text_field :end_at, data: { :date_format => 'YYYY/MM/DD hh:mm' },
-        :class => 'form-control datetimepicker', placeholder: '終了時刻' %>
-  </span>
+  <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
 
 <script type="text/javascript">
