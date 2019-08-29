@@ -57,6 +57,12 @@ p {
   line-height: 1.7em;
 }
 
+#username {
+  font-size: 2em;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
 /* header */
 
 #logo {
@@ -126,7 +132,7 @@ aside {
     margin-top: 20px;
   }
   section {
-    padding: 10px 0;
+    // padding: 10px 0;
     margin-top: 20px;
     &:first-child {
       border: 0;
@@ -147,26 +153,17 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
-
 .stats {
   overflow: auto;
   margin-top: 0;
   padding: 0;
+  display: flex;
+   justify-content: center;
   a {
-    float: left;
-    padding: 0 10px;
+    padding: 0 20px;
     border-left: 1px solid $gray-lighter;
     color: gray;
     &:first-child {
-      padding-left: 0;
       border: 0;
     }
     &:hover {
@@ -177,6 +174,10 @@ aside {
   strong {
     display: block;
   }
+}
+
+.micropost_form {
+  padding: 10px;
 }
 
 .user_avatars {

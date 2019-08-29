@@ -1,8 +1,8 @@
-<div class="text-center">
+<div class="center">
   <%= image_tag @user.avatar.url if @user.avatar? %>
 </div>
-<h1><%= @user.username %></h1>
-<% if @user == current_user %>
-<span><%= link_to "view my profile", current_user %></span>
-<% end %>
-<span><%= pluralize(current_user.microposts.count, "micropost") %></span>
+<div class="center" id="username">
+  <% if @user == current_user %>
+  <%= link_to @user.username, current_user %>
+  <% end %>
+</div>
