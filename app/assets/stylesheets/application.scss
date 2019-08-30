@@ -63,6 +63,10 @@ p {
   text-align: center;
 }
 
+#profile {
+  padding: 0 15px;
+}
+
 /* header */
 
 #logo {
@@ -155,7 +159,7 @@ aside {
 
 .stats {
   overflow: auto;
-  margin-top: 0;
+  margin-top: 10px;
   padding: 0;
   display: flex;
    justify-content: center;
