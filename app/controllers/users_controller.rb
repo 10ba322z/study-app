@@ -4,6 +4,9 @@ class UsersController < ApplicationController
       @user = current_user
       @micropost  = @user.microposts.build
       @feed_items = @user.feed.page(params[:page])
+      @daytime    = @user.daytime
+      @weektime   = @user.weektime
+      @monthtime  = @user.monthtime
     end
   end
 

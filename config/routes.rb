@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'chart_sample/index'
   devise_for :users
   devise_scope :user do
     authenticated :user do

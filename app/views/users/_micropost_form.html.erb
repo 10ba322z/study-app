@@ -1,8 +1,8 @@
 <%= form_for(@micropost) do |f| %>
 <span class="controls">
-  <%= f.text_field :start_at, data: { :date_format => 'YYYY/MM/DD hh:mm' },
+  <%= f.text_field :start_at, data: { :date_format => 'YYYY/MM/DD HH:mm' },
       :class => 'form-control datetimepicker', placeholder: '開始時刻' %>
-  <%= f.text_field :end_at, data: { :date_format => 'YYYY/MM/DD hh:mm' },
+  <%= f.text_field :end_at, data: { :date_format => 'YYYY/MM/DD HH:mm' },
       :class => 'form-control datetimepicker', placeholder: '終了時刻' %>
 </span>
   <div class="field">
