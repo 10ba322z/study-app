@@ -1,14 +1,14 @@
 <div class="row">
   <aside class="col-md-3">
-      <section class="user_info">
-        <%= render 'user_info' %>
-      </section>
-      <section class="stats">
-        <%= render 'stats' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'micropost_form' %>
-      </section>
+    <section class="user_info">
+      <%= render 'user_info' %>
+    </section>
+    <section class="stats">
+      <%= render 'stats' %>
+    </section>
+    <section class="micropost_form">
+      <%= render 'micropost_form' %>
+    </section>
   </aside>
   <div class="col-md-6">
     <h3>タイムライン</h3>
@@ -17,16 +17,39 @@
   <div class="col-md-3">
     <h3>学習時間</h3>
     <div class="study_sum">
+      今日
       <%= @daytime %>
-      分/日
+      分
     </div>
     <div class="study_sum">
+      前日
+      <%= @daytime_before %>
+      分
+    </div>
+    <div class="study_sum">
+      今週
       <%= @weektime %>
-      分/週
+      分
     </div>
     <div class="study_sum">
+      先週
+      <%= @weektime_before %>
+      分
+    </div>
+    <div class="study_sum">
+      今月
       <%= @monthtime %>
-      分/月
+      分
+    </div>
+    <div class="study_sum">
+      前月
+      <%= @monthtime_before %>
+      分
+    </div>
+    <div class="study_sum">
+      全期間合計
+      <%= @total_studytime %>
+      分
     </div>
   </div>
 </div>

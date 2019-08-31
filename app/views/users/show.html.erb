@@ -1,16 +1,72 @@
 <div class="row">
   <aside class="col-md-3">
     <section class="user_info">
-        <%= render 'user_info' %>
+      <%= render 'user_info' %>
     </section>
     <section class="stats">
       <%= render 'stats' %>
     </section>
   </aside>
-  <div class="col-md-9">
+  <div class="col-md-6">
+    <%= javascript_include_tag 'Chart.min' %>
+    <div>
+      <canvas id="DayChart"></canvas>
+      <script>
+      var ctx = document.getElementById("DayChart").getContext('2d');
+      var dayChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: <%= @day_labels.to_json.html_safe %>,
+          datasets: [{
+            label: "1日の学習時間 (分)",
+            data: <%= [@daytime_before_4days,@daytime_before_3days,@daytime_before_2days,@daytime_before,@daytime] %>,
+            backgroundColor: 'rgba(255, 99, 132, 1.0)',
+            borderColor: 'rgba(255, 50, 132, 1.0)',
+            fill: false
+          }]
+        },
+      });
+      </script>
+      <canvas id="WeekChart"></canvas>
+      <script>
+      var ctx = document.getElementById("WeekChart").getContext('2d');
+      var weekChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels:　["4週間前","3週間前","2週間前","先週","今週"],
+          datasets: [{
+            label: "1週間の学習時間 (分)",
+            data: <%= [@weektime_before_4weeks,@weektime_before_3weeks,@weektime_before_2weeks,@weektime_before,@weektime] %>,
+            backgroundColor: 'rgba(255, 99, 132, 1.0)',
+            borderColor: 'rgba(255, 50, 132, 1.0)',
+            fill: false
+          }]
+        },
+      });
+      </script>
+      <canvas id="MonthChart"></canvas>
+      <script>
+      var ctx = document.getElementById("MonthChart").getContext('2d');
+      var monthChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: <%= @month_labels.to_json.html_safe %>,
+          datasets: [{
+            label: "1ヶ月の学習時間 (分)",
+            data: <%= [@monthtime_before_4months,@monthtime_before_3months,@monthtime_before_2months,@monthtime_before,@monthtime] %>,
+            backgroundColor: 'rgba(255, 99, 132, 1.0)',
+            borderColor: 'rgba(255, 50, 132, 1.0)',
+            fill: false
+          }]
+        },
+      });
+      </script>
+    </div>
+  </div>
+  <div class="col-md-3">
     <%= render 'follow_form' if user_signed_in? %>
     <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <h3>学習の記録 (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>
