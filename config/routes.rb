@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'chart_sample/index'
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
   devise_scope :user do
     authenticated :user do
       root :to => 'users#index'
