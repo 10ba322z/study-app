@@ -1,5 +1,9 @@
 <div class="center">
-  <%= image_tag @user.avatar.url if @user.avatar? %>
+  <% if @user.avatar? %>
+  <%= image_tag @user.avatar.url %>
+  <% else %>
+  <%= image_tag "default.jpg" %>
+  <% end %>
 </div>
 <div class="center" id="username">
   <% if @user == current_user %>
