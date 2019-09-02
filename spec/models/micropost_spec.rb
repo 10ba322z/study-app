@@ -3,11 +3,7 @@ require 'rails_helper'
 RSpec.describe Micropost, type: :model do
 
   before do
-    @user = User.create(
-      username: "tester",
-      email:    "tester@example.com",
-      password: "tester"
-    )
+    @user = FactoryBot.create(:user)
 
     @micropost = @user.microposts.create(
       content: "test content",
@@ -20,7 +16,7 @@ RSpec.describe Micropost, type: :model do
     expect(@micropost).to be_valid
   end
 
-  it "start_atがend_atよりあとならば無効である" do
+  it "start_atがend_atより後ならば無効である" do
     @micropost.start_at = Time.zone.now + 3.hour
     expect(@micropost).to_not be_valid
   end
