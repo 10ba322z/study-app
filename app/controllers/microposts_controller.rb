@@ -7,8 +7,9 @@ class MicropostsController < ApplicationController
       flash[:success] = "学習時間を記録しました"
       redirect_to root_url
     else
+      flash[:danger] = "学習時間が記録できませんでした"
       @feed_items = []
-      render 'users/index'
+      redirect_to root_url
     end
   end
 
