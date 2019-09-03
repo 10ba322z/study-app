@@ -1,7 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
-
+@font-face {
+  font-family: 'timeburnerbold';
+  src: font-url('timeburnerbold.ttf') ;
+}
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -40,8 +43,9 @@ textarea {
   width: 70%;
 }
 
-.checkbox {
-  
+#top_title {
+  font-family: "timeburnerbold";
+  font-size: 70px;
 }
 
 /* typography */
@@ -94,6 +98,7 @@ p {
 }
 
 #logo {
+  font-family: "timeburnerbold";
   float: left;
   margin-right: 10px;
   margin-left: 10px;

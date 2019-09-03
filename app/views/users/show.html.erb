@@ -20,11 +20,21 @@
           datasets: [{
             label: "1日の学習時間 (分)",
             data: <%= [@daytime_before_4days,@daytime_before_3days,@daytime_before_2days,@daytime_before,@daytime] %>,
-            backgroundColor: 'rgba(255, 99, 132, 1.0)',
-            borderColor: 'rgba(255, 50, 132, 1.0)',
+            backgroundColor: 'rgba(152, 251, 152, 0.5)',
+            borderColor: 'rgba(35, 150, 35, 1.0)',
+            borderWidth: 1,
             fill: false
           }]
         },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero:true
+              }
+            }]
+          }
+        }
       });
       </script>
       <canvas id="WeekChart"></canvas>
@@ -37,11 +47,21 @@
           datasets: [{
             label: "1週間の学習時間 (分)",
             data: <%= [@weektime_before_4weeks,@weektime_before_3weeks,@weektime_before_2weeks,@weektime_before,@weektime] %>,
-            backgroundColor: 'rgba(255, 99, 132, 1.0)',
-            borderColor: 'rgba(255, 50, 132, 1.0)',
+            backgroundColor: 'rgba(152, 251, 152, 0.5)',
+            borderColor: 'rgba(35, 150, 35, 1.0)',
+            borderWidth: 1,
             fill: false
           }]
         },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero:true
+              }
+            }]
+          }
+        }
       });
       </script>
       <canvas id="MonthChart"></canvas>
@@ -54,11 +74,21 @@
           datasets: [{
             label: "1ヶ月の学習時間 (分)",
             data: <%= [@monthtime_before_4months,@monthtime_before_3months,@monthtime_before_2months,@monthtime_before,@monthtime] %>,
-            backgroundColor: 'rgba(255, 99, 132, 1.0)',
-            borderColor: 'rgba(255, 50, 132, 1.0)',
+            backgroundColor: 'rgba(152, 251, 152, 0.5)',
+            borderColor: 'rgba(35, 150, 35, 1.0)',
+            borderWidth: 1,
             fill: false
           }]
         },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero:true
+              }
+            }]
+          }
+        }
       });
       </script>
     </div>
