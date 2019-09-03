@@ -9,6 +9,10 @@
 }
 
 /* universal */
+.bgimage {
+   background: image-url('back.jpg');
+   background-size: cover;
+ }
 
 body {
   padding-top: 70px;
@@ -30,6 +34,16 @@ textarea {
   margin-bottom: 10px;
 }
 
+.bgclear {
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+  width: 70%;
+}
+
+.checkbox {
+  
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,7 +58,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.7em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;

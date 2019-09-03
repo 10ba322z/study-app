@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2>プロフィールの編集</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -43,7 +43,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.label :現在のパスワード %> <i>(we need your current password to confirm your changes)</i><br />
       <%= f.password_field :current_password, autocomplete: "current-password" %>
     </div>
 

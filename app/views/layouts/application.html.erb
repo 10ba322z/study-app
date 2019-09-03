@@ -6,8 +6,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
   </head>
-  <body>
+  <body class=<%="bgimage" unless user_signed_in? %>>
     <%= render 'layouts/header' if user_signed_in? %>
+    <% unless user_signed_in? %>
+    <h1>Study App</h1>
+    <% end %>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
