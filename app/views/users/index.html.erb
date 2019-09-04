@@ -15,41 +15,6 @@
     <%= render 'feed' %>
   </div>
   <div class="col-md-3">
-    <h3>学習時間</h3>
-    <div class="study_sum">
-      今日
-      <%= @daytime %>
-      分
-    </div>
-    <div class="study_sum">
-      前日
-      <%= @daytime_before %>
-      分
-    </div>
-    <div class="study_sum">
-      今週
-      <%= @weektime %>
-      分
-    </div>
-    <div class="study_sum">
-      先週
-      <%= @weektime_before %>
-      分
-    </div>
-    <div class="study_sum">
-      今月
-      <%= @monthtime %>
-      分
-    </div>
-    <div class="study_sum">
-      前月
-      <%= @monthtime_before %>
-      分
-    </div>
-    <div class="study_sum">
-      全期間合計
-      <%= @total_studytime %>
-      分
-    </div>
+    <%= render 'studytime' %>
   </div>
 </div>

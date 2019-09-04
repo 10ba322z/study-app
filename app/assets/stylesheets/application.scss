@@ -70,6 +70,10 @@ h2 {
   color: #777;
 }
 
+h3 {
+  color: #777
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -332,8 +336,22 @@ span.picture {
 }
 
 /* study sum */
-.study_sum {
-  font-size: 1.4em;
-  padding: 15px;
-  float: left;
+#studytable {
+  padding: 0;
+}
+
+.undlerline {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+tbody {
+  font-size: 1.2em;
+}
+
+.graph {
+  padding-bottom: 50px;
+}
+
+#first-graph {
+  border-top: solid 1px #e8e8e8;
 }

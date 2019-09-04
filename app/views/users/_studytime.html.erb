@@ -1,5 +1,30 @@
-<!-- ここに日、週、月の勉強時間を入れたい　未使用 -->
-
-<div class="daytime">
- <%= @daytime %>
-</div>
+<table class="table">
+  <caption id="studytable"><h3>学習時間</h3></caption>
+  <tbody>
+		<tr>
+			<th>今日</th>
+			<td><%= @daytime %>分</td>
+			<th>前日</th>
+			<td><%= @daytime_before %>分</td>
+		</tr>
+		<tr>
+			<th>今週</th>
+			<td><%= @weektime %>分</td>
+			<th>先週</th>
+			<td><%= @weektime_before %>分</td>
+		</tr>
+		<tr>
+			<th>今月</th>
+			<td><%= @monthtime %>分</td>
+			<th>先月</th>
+			<td><%= @monthtime_before %>分</td>
+		</tr>
+		<tr>
+			<th>全期間合計</th>
+      <!-- ダミー用td２つ -->
+      <td></td>
+      <td></td>
+			<td><%= @total_studytime %>分</td>
+		</tr>
+	</tbody>
+</table>
