@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
+  before_action :search_users
+
   def index
+    @users = User.all
     if user_signed_in?
       @user = current_user
       @micropost  = @user.microposts.build
@@ -52,5 +55,10 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @users = @user.followers.page(params[:page])
     render 'show_follow'
+  end
+
+  def search_users
+    @search = User.ransack(params[:q])
+    @search_users = @search.result.page(params[:page])
   end
 end

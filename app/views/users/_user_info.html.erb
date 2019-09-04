@@ -8,6 +8,8 @@
 <div class="center" id="username">
   <% if @user == current_user %>
   <%= link_to @user.username, current_user %>
+  <% else %>
+  <%= @user.username %>
   <% end %>
 </div>
 <div class="center" id="profile">

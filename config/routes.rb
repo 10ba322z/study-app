@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   resources :users,         only: [:index, :show]
   resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-
+  
 end

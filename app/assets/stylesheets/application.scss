@@ -119,6 +119,34 @@ p {
   text-decoration: none;
 }
 
+#user_search {
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+}
+
+.search-box {
+  width: 100%;
+  border:1px solid #aaa;
+  border-radius:6px;
+  margin: 5px 15px 15px 0px;
+
+}
+
+.search-btn {
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  margin-bottom: 1px;
+  background:#aaa;
+  width:25%;
+  border:none;
+  border-radius: 0 6px 6px 0;
+  color:#FFF;
+}
+
+.search-btn:hover {
+  background:#696969;
+}
 
 /* footer */
 
@@ -354,4 +382,9 @@ tbody {
 
 #first-graph {
   border-top: solid 1px #e8e8e8;
+}
+
+.search_users {
+  margin-top: 15px;
+  padding: 0px;
 }
