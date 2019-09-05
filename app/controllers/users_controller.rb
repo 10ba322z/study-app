@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     if user_signed_in?
       @user = current_user
       @micropost  = @user.microposts.build
-      @feed_items = @user.feed.page(params[:page])
+      @feed_items = @user.feed.page(params[:page]).per(15)
       @daytime    = @user.daytime
       @weektime   = @user.weektime
       @monthtime  = @user.monthtime
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.page(params[:page])
+    @microposts = @user.microposts.page(params[:page]).per(15)
     ta  = (0..4).map{|i| Time.new.ago(i.days)}
     tar = ta.reverse
     @day_labels = tar.map{|i| i.strftime("%m-%d")}
@@ -44,14 +44,14 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = "Following"
+    @title = "フォロー"
     @user  = User.find(params[:id])
     @users = @user.following.page(params[:page])
     render 'show_follow'
   end
 
   def followers
-    @title = "Followers"
+    @title = "フォロワー"
     @user  = User.find(params[:id])
     @users = @user.followers.page(params[:page])
     render 'show_follow'

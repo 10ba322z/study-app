@@ -4,6 +4,7 @@
   <div class="container">
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       </ul>

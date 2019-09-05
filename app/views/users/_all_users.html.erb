@@ -1,5 +1,5 @@
 <%= search_form_for @search do |f| %>
-  <%= f.search_field :username_cont, class: "search-box", placeholder: " ユーザーネーム検索" %>
+  <%= f.search_field :username_cont, class: "search-box", placeholder: " ユーザー検索" %>
   <%= f.submit "検索", class: "search-btn" %>
 <% end %>
 <% @search_users.each do |user| %>
