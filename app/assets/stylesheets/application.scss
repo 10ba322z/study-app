@@ -48,6 +48,10 @@ textarea {
   font-size: 70px;
 }
 
+.easy-login {
+  padding-top: 10px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -366,6 +370,8 @@ span.picture {
 /* study sum */
 #studytable {
   padding: 0;
+  font-size: 24px;
+  margin: 15px 0px 5px 0px;
 }
 
 .undlerline {
@@ -388,3 +394,32 @@ tbody {
   margin-top: 15px;
   padding: 0px;
 }
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }

@@ -3,7 +3,7 @@
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    
+
     <div class="field">
       <%= f.label :メールアドレス %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -25,6 +25,14 @@
       <%= f.submit "ログイン", class: "btn btn-primary" %>
     </div>
   <% end %>
+
+    <div class="easy-login">
+      <%= form_for(User.create, url: user_session_path) do |f| %>
+      <%= f.hidden_field :email, value: "test@example.com" %>
+      <%= f.hidden_field :password, value: "testtest" %>
+      <%= f.submit "かんたんログイン", class:"btn center-block btn-success"%>
+      <% end %>
+    </div>
 
   <%= render "devise/shared/links" %>
 </div>

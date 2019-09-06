@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   resources :users,         only: [:index, :show]
   resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  
+  if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: '/letter_opener'
+  end
+
 end

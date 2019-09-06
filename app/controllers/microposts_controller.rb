@@ -7,7 +7,7 @@ class MicropostsController < ApplicationController
       flash[:success] = "学習時間を記録しました"
       redirect_to root_url
     else
-      flash[:danger] = "学習時間が記録できませんでした"
+      flash[:danger] = @micropost.errors.full_messages.join(',')
       redirect_to root_url
     end
   end

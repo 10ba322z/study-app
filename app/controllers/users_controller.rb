@@ -58,7 +58,12 @@ class UsersController < ApplicationController
   end
 
   def search_users
-    @search = User.ransack(params[:q])
-    @search_users = @search.result.page(params[:page])
+    user = current_user
+    @search = User.where.not(id: user.id).ransack(params[:q])
+    if params[:q].nil?
+      User.none
+    else
+      @search_users = @search.result.page(params[:user_page]).per(10)
+    end
   end
 end

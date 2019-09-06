@@ -2,6 +2,9 @@
   <%= f.search_field :username_cont, class: "search-box", placeholder: " ユーザー検索" %>
   <%= f.submit "検索", class: "search-btn" %>
 <% end %>
-<% @search_users.each do |user| %>
-  <ul class="search_users"><%= link_to user.username, user_path(user.id) %></ul>
+<% if @search_users.presence %>
+  <% @search_users.each do |user| %>
+    <ul class="search_users"><%= link_to user.username, user_path(user.id) %></ul>
+  <% end %>
+  <%= paginate @search_users, :param_name => 'user_page' %>
 <% end %>
