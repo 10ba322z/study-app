@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= favicon_link_tag('favicon.ico') %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery' %>
     <%= render 'layouts/shim' %>
   </head>
   <body class=<%="bgimage" unless user_signed_in? %>>
