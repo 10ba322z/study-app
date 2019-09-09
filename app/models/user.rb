@@ -23,6 +23,14 @@ class User < ApplicationRecord
   end
 
 # 学習時間を出す
+  def total_studytime
+    all_microposts =
+    Micropost.where("user_id = :user_id", user_id: id)
+    start_at_total = all_microposts.pluck('start_at').map!(&:to_i).sum
+    end_at_total   = all_microposts.pluck('end_at').map!(&:to_i).sum
+    (end_at_total - start_at_total)/60
+  end
+
   def daytime
     microposts_day =
     Micropost.where("user_id = :user_id", user_id: id)
@@ -75,14 +83,6 @@ class User < ApplicationRecord
     start_at_prev_month_sum = microposts_prev_month.pluck('start_at').map!(&:to_i).sum
     end_at_prev_month_sum   = microposts_prev_month.pluck('end_at').map!(&:to_i).sum
     (end_at_prev_month_sum - start_at_prev_month_sum)/60
-  end
-
-  def total_studytime
-    all_microposts =
-    Micropost.where("user_id = :user_id", user_id: id)
-    start_at_total = all_microposts.pluck('start_at').map!(&:to_i).sum
-    end_at_total   = all_microposts.pluck('end_at').map!(&:to_i).sum
-    (end_at_total - start_at_total)/60
   end
 
 # グラフの学習時間を表示させる

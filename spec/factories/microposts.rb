@@ -4,5 +4,9 @@ FactoryBot.define do
     start_at {Time.zone.now - 2.hour}
     end_at   {Time.zone.now}
     association :user
+
+    trait :invalid do
+      start_at {nil}
+    end
   end
 end
