@@ -25,14 +25,4 @@ RSpec.feature "Microposts", type: :feature do
       expect(page).to have_content "120 分学習しました"
     }.to change(@user.microposts, :count).by(1)
   end
-
-  scenario "学習時間のリンクを押すと詳細画面へ遷移する", js:true do
-    click_link "学習時間"
-
-    expect(page).to have_content "学習時間グラフ"
-    # chromeがないと言われてテストが通らない
-    # expect(page).to have_content "DayChart"
-    # expect(page).to have_content "WeekChart"
-    # expect(page).to have_content "MonthChart"
-  end
 end

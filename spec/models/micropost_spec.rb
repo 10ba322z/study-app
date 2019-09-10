@@ -4,7 +4,6 @@ RSpec.describe Micropost, type: :model do
 
   before do
     @user = FactoryBot.create(:user)
-
     @micropost = @user.microposts.create(
       content: "test content",
       start_at: Time.zone.now,
@@ -14,6 +13,11 @@ RSpec.describe Micropost, type: :model do
 
   it "マイクロポストにstart_atとend_atがあれば有効である" do
     expect(@micropost).to be_valid
+  end
+
+  it "contentが255文字以上あれば無効である" do
+    @micropost.content = "a" * 256
+    expect(@micropost).to_not be_valid
   end
 
   it "start_atがend_atより後ならば無効である" do
