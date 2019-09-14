@@ -3,7 +3,7 @@ lock "~> 3.11.1"
 
 set :application, "study-app"
 set :repo_url, "git@github.com:10ba322z/study-app.git"
-set :deploy_to, "/var/www/projects/study-app/current"
+set :deploy_to, "/var/www/projects/study-app"
 set :rbenv_ruby, '2.5.5'
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml', 'config/master.key')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
