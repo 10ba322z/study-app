@@ -11,7 +11,7 @@
   <body class=<%="bgimage" unless user_signed_in? %>>
     <%= render 'layouts/header' if user_signed_in? %>
     <% unless user_signed_in? %>
-    <div class="center" id="top_title">Study App</div>
+    <div class="center" id="top_title">Study App "自動デプロイ出来たー"</div>
     <% end %>
     <%= render 'layouts/flash_messages' %>
     <%= yield %>
