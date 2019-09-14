@@ -3,5 +3,4 @@ server "3.114.239.184",
    roles: %w{web db app},
    ssh_options: {
        keys: %w(~/.ssh/StudyApp_key.pem),
-       forward_agent: true
    }
