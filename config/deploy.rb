@@ -10,10 +10,12 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :keep_releases, 5
 set :log_level, :debug
 
-namespace :deploy do
+namespace :deploy do  
   desc 'Restart application'
   task :restart do
-    invoke 'unicorn:restart'
+    on roles(:app) do
+      invoke 'unicorn:restart'
+    end
   end
 
   desc 'Create database'
