@@ -28,8 +28,8 @@
 
     <div class="easy-login">
       <%= form_for(User.create, url: user_session_path) do |f| %>
-      <%= f.hidden_field :email, value: "test@example.com" %>
-      <%= f.hidden_field :password, value: "testtest" %>
+      <%= f.hidden_field :email, value: "testuser@example.com" %>
+      <%= f.hidden_field :password, value: "testuser" %>
       <%= f.submit "かんたんログイン", class:"btn center-block btn-success"%>
       <% end %>
     </div>
