@@ -19,7 +19,7 @@ production:
   adapter: postgresql
   encoding: utf8
   database: studyapp-postgresql
-  username: postgres
-  password: sakura3c
-  host: studyapp-postgresql.cdka7whdrybp.ap-northeast-1.rds.amazonaws.com
+  username: ENV["PRODUCTION_DB_USER_NAME"]
+  password: ENV["PRODUCTION_DB_PASSWORD"]
+  host: ENV["PRODUCTION_DB_HOST"]
   port: 5432
