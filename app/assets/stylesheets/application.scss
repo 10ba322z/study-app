@@ -99,7 +99,7 @@ p {
 
 /* header */
 .navbar-brand {
-  background-image: image-url("logo.jpg") no-repeat left center;
+  background: url("logo.jpg") no-repeat left center;
   background-size: contain;
   height: 50px;
   width:  50px;
