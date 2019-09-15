@@ -19,7 +19,7 @@ production:
   adapter: postgresql
   encoding: utf8
   database: studyapp-postgresql
-  username: ENV["PRODUCTION_DB_USER_NAME"]
-  password: ENV["PRODUCTION_DB_PASSWORD"]
-  host: ENV["PRODUCTION_DB_HOST"]
+  username: <%= ENV["PRODUCTION_DB_USER_NAME"] %>
+  password: <%= ENV["PRODUCTION_DB_PASSWORD"] %>
+  host: <%= ENV["PRODUCTION_DB_HOST"] %>
   port: 5432
