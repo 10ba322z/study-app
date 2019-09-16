@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user, only: :destroy
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -18,7 +18,8 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
-private
+  private
+
   def micropost_params
     params.require(:micropost).permit(:content, :picture, :start_at, :end_at)
   end

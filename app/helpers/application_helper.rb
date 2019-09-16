@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def full_title(page_title = '')
+  def full_title(page_title = '') # rubocop:disable Airbnb/OptArgParameters
     base_title = "StudyApp"
     if page_title.empty?
       base_title
@@ -10,5 +10,5 @@ module ApplicationHelper
 
   def current_user?(user)
     user == current_user
-  end    
+  end
 end

@@ -1,6 +1,6 @@
 class Micropost < ApplicationRecord
   belongs_to :user
-  default_scope -> { order(created_at: :desc) }
+  default_scope -> { order(created_at: :desc) } # rubocop:disable Airbnb/DefaultScope
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :content,  length: { maximum: 255 }
@@ -10,7 +10,8 @@ class Micropost < ApplicationRecord
   validate  :studing_time_should_not_overlap
   validate  :picture_size
 
-private
+  private
+
   def picture_size
     if picture.size > 5.megabytes
       errors.add(:picture, "5MB以下にしてください")
@@ -18,18 +19,18 @@ private
   end
 
   def start_at_should_be_before_end_at
-    return unless start_at && end_at
+    return unless start_at && end_at # rubocop:disable Airbnb/SimpleModifierConditional,Airbnb/SimpleUnless
     if start_at >= end_at
       errors.add(:start_at, 'は終了時間よりも前に設定してください')
     end
   end
 
   def studing_time_should_not_overlap
-    if Micropost
-      .where(user_id: user_id)
-      .where("start_at < ?", end_at)
-      .where("end_at > ?", start_at)
-      .where.not(id: id).exists?
+    if Micropost.
+        where(user_id: user_id).
+        where("start_at < ?", end_at).
+        where("end_at > ?", start_at).
+        where.not(id: id).exists?
       errors.add(:base, '他の学習時間と重複しています')
     end
   end

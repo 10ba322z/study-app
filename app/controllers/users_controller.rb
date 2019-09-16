@@ -20,12 +20,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.page(params[:page]).per(15)
-    ta  = (0..4).map{|i| Time.new.ago(i.days)}
+    ta  = (0..4).map { |i| Time.new.ago(i.days) }
     tar = ta.reverse
-    @day_labels = tar.map{|i| i.strftime("%m-%d")}
-    ma  = (0..4).map{|i| Time.new.ago(i.months)}
+    @day_labels = tar.map { |i| i.strftime("%m-%d") }
+    ma  = (0..4).map { |i| Time.new.ago(i.months) }
     mar = ma.reverse
-    @month_labels = mar.map{|i| i.strftime("%m")}
+    @month_labels = mar.map { |i| i.strftime("%m") }
     @daytime = @user.daytime
     @daytime_before = @user.daytime_before
     @daytime_before_2days = @user.daytime_before_2days
