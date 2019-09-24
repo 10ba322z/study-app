@@ -1,22 +1,24 @@
-<div class="row">
-  <aside class="col-md-3">
-    <section class="user_info">
-      <%= render 'user_info' %>
-    </section>
-    <section class="stats">
-      <%= render 'stats' %>
-    </section>
-    <section class="micropost_form">
-      <%= render 'micropost_form' %>
-    </section>
-  </aside>
-  <div class="col-md-6">
-    <h3>タイムライン</h3>
-    <%= render 'feed' %>
-  </div>
-  <div class="col-md-3">
-    <%= render 'studytime' %>
-    <h3>ユーザー検索</h3>
-    <%= render 'all_users' %>
+<div class="container-fluid">
+  <div class="row">
+    <aside class="col-md-3">
+      <section class="user_info">
+        <%= render 'user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'stats' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-6">
+      <h3>タイムライン</h3>
+      <%= render 'feed' %>
+    </div>
+    <div class="col-md-3">
+      <%= render 'studytime' %>
+      <h3>ユーザー検索</h3>
+      <%= render 'all_users' %>
+    </div>
   </div>
 </div>
