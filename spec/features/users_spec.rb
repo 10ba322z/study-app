@@ -36,19 +36,19 @@ RSpec.feature "Users", type: :feature do
 
   context "各ページのタイトルが表示される" do
     scenario "トップページのタイトルが表示される" do
-      expect(page).to have_title "StudyApp"
+      expect(page).to have_title "Study App"
     end
     scenario "詳細ページのタイトルが表示される" do
       visit user_path(@user.id)
-      expect(page).to have_title "学習データ | StudyApp"
+      expect(page).to have_title "学習データ | Study App"
     end
     scenario "フォローページのタイトルが表示される" do
       visit following_user_path(@user.id)
-      expect(page).to have_title "フォロー | StudyApp"
+      expect(page).to have_title "フォロー | Study App"
     end
     scenario "フォロワーページのタイトルが表示される" do
       visit followers_user_path(@user.id)
-      expect(page).to have_title "フォロワー | StudyApp"
+      expect(page).to have_title "フォロワー | Study App"
     end
   end
 

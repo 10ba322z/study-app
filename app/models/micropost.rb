@@ -2,6 +2,8 @@ class Micropost < ApplicationRecord
   belongs_to :user
   default_scope -> { order(created_at: :desc) } # rubocop:disable Airbnb/DefaultScope
   mount_uploader :picture, PictureUploader
+  has_many :likes, dependent: :destroy
+  has_many :iine_users, through: :likes, source: :user
   validates :user_id, presence: true
   validates :content,  length: { maximum: 255 }
   validates :start_at, presence: true
@@ -9,6 +11,18 @@ class Micropost < ApplicationRecord
   validate  :start_at_should_be_before_end_at
   validate  :studing_time_should_not_overlap
   validate  :picture_size
+
+  def iine(user)
+    likes.create(user_id: user.id)
+  end
+
+  def deleteiine(user)
+    likes.find_by(user_id: user.id).destroy
+  end
+
+  def iine?(user)
+    iine_users.include?(user)
+  end
 
   private
 
