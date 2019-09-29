@@ -1,38 +1,42 @@
-<div class="container bgclear">
-  <h2>ログイン</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 bgclear">
+      <h2>ログイン</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.label :メールアドレス %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+        <div class="field">
+          <%= f.label :メールアドレス %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-    <div class="field">
-      <%= f.label :パスワード %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
+        <div class="field">
+          <%= f.label :パスワード %><br />
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
 
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.label :次回以降、ログイン状態を維持する %>
-        <%= f.check_box :remember_me %>
-      </div>
-    <% end %>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.label :次回以降、ログイン状態を維持する %>
+            <%= f.check_box :remember_me %>
+          </div>
+        <% end %>
 
-    <div class="actions">
-      <%= f.submit "ログイン", class: "btn btn-primary" %>
-    </div>
-  <% end %>
-
-    <div class="easy-login">
-      <%= form_for(User.create, url: user_session_path) do |f| %>
-      <%= f.hidden_field :email, value: "testuser@example.com" %>
-      <%= f.hidden_field :password, value: "testuser" %>
-      <%= f.submit "かんたんログイン", class:"btn center-block btn-success"%>
+        <div class="actions">
+          <%= f.submit "ログイン", class: "btn btn-primary" %>
+        </div>
       <% end %>
-    </div>
 
-  <%= render "devise/shared/links" %>
+        <div class="easy-login">
+          <%= form_for(User.create, url: user_session_path) do |f| %>
+          <%= f.hidden_field :email, value: "testuser@example.com" %>
+          <%= f.hidden_field :password, value: "testuser" %>
+          <%= f.submit "かんたんログイン", class:"btn center-block btn-success"%>
+          <% end %>
+        </div>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
 </div>
