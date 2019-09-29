@@ -35,4 +35,5 @@ https://study-app.net/
     * S3
     * ROUTE53
 * 使用言語/フレームワーク
-  * Ruby/Ruby on Rails
+  * Ruby 2.5.5
+  * Ruby on Rails 5.2.3
