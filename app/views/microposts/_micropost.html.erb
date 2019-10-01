@@ -1,4 +1,11 @@
 <li id="micropost-<%= micropost.id %>">
+  <span class="avatar">
+    <% if micropost.user.avatar? %>
+      <%= image_tag micropost.user.avatar.url, size:50 %>
+    <% else %>
+      <%= image_tag "default.jpg", size:50 %>
+    <% end %>
+  </span>
   <span class="user"><%= link_to micropost.user.username, micropost.user %></span>
   <span class="content">
     <%= micropost.content %>
